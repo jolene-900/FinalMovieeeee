@@ -653,7 +653,7 @@ elif page == "Model Deep-Dive":
 # PAGE: EVALUATION METRICS
 # -----------------------------
 elif page == "Evaluation Metrics":
-    st.subheader("2. Rating Prediction Metrics")
+    st.subheader("Rating Prediction Metrics")
 
     sample_size = st.slider("Sample Size for MSE / RMSE", 100, 500, 300, 50)
 
@@ -682,7 +682,7 @@ elif page == "Evaluation Metrics":
             st.plotly_chart(fig, use_container_width=True)
 
     st.info(
-        "Note: These metrics are approximate offline evaluations based on the ratings_small dataset. "
+        "Note: These metrics are approximate offline evaluations. "
         "They help assess recommendation accuracy and prediction quality for the academic project."
     )
 
