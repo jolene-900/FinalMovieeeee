@@ -653,23 +653,6 @@ elif page == "Model Deep-Dive":
 # PAGE: EVALUATION METRICS
 # -----------------------------
 elif page == "Evaluation Metrics":
-    st.header("📈 Recommender System Evaluation")
-
-    st.subheader("1. Ranking Metrics")
-    k_value = st.slider("Top-K for Precision / Recall / F1", 3, 10, 5)
-
-    if st.button("Run Precision / Recall / F1 Evaluation"):
-        ranking_metrics = precision_recall_f1_at_k(k=k_value, positive_threshold=4.0, user_limit=80)
-
-        if ranking_metrics is None:
-            st.error("Unable to compute ranking metrics with the current dataset.")
-        else:
-            c1, c2, c3 = st.columns(3)
-            c1.metric("Precision", f"{ranking_metrics['precision']:.4f}")
-            c2.metric("Recall", f"{ranking_metrics['recall']:.4f}")
-            c3.metric("F1 Score", f"{ranking_metrics['f1']:.4f}")
-            st.caption(f"Evaluated over {ranking_metrics['instances']} binary relevance instances.")
-
     st.subheader("2. Rating Prediction Metrics")
 
     sample_size = st.slider("Sample Size for MSE / RMSE", 100, 500, 300, 50)
